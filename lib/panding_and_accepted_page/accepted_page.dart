@@ -1,0 +1,132 @@
+import 'package:flutter/material.dart';
+import 'package:it_1/Widgets/button_widget.dart';
+import 'package:it_1/Widgets/text_widget.dart';
+import 'package:it_1/utilits/colors.dart';
+import 'package:it_1/utilits/style.dart';
+
+class accepted_page extends StatefulWidget {
+  const accepted_page({Key? key}) : super(key: key);
+
+  @override
+  State<accepted_page> createState() => _accepted_pageState();
+}
+
+class _accepted_pageState extends State<accepted_page> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Container(
+            height: double.infinity,
+            width: double.infinity,
+            color: Colorscode.pagebackgroundcolor,
+            child: ListView.builder(
+              itemCount: 5,
+              itemBuilder: (context, index){
+                return Card(
+                  child: Container(
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            SizedBox(
+                                width: MediaQuery.of(context).size.width * .15,
+                                child: CircleAvatar(
+                                  backgroundColor: Colorscode.forgetbuttoncolor,
+                                  radius: 45,
+                                )
+                            ),
+                            Style.distence_width10,
+                            Column(
+                              children: [
+                                Row(
+
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                        width: MediaQuery.of(context).size.width * .20,
+                                        child: Text("Name")
+                                    ),
+                                    Style.distence_width5,
+                                    Text(" : "),
+                                    SizedBox(
+                                        width: MediaQuery.of(context).size.width * .32,
+                                        child: Text("MD JAHANGIR MIA", maxLines: 2, overflow: TextOverflow.ellipsis,)
+                                    ),
+                                    Style.distence_height2,
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                        width: MediaQuery.of(context).size.width * .20,
+                                        child: Text("Email")
+                                    ),
+                                    Style.distence_width5,
+                                    Text(" : "),
+                                    SizedBox(
+                                        width: MediaQuery.of(context).size.width * .32,
+                                        child: Text("jahangirad14@gmail.com", maxLines: 2, overflow: TextOverflow.ellipsis,)
+                                    ),
+                                    Style.distence_height2,
+                                  ],
+                                ),
+                                Row(
+
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                        width: MediaQuery.of(context).size.width * .20,
+                                        child: Text("Phone")
+                                    ),
+                                    Style.distence_width5,
+                                    Text(" : "),
+                                    SizedBox(
+                                        width: MediaQuery.of(context).size.width * .32,
+                                        child: Text("01796-196500", maxLines: 2, overflow: TextOverflow.ellipsis,)
+                                    ),
+                                    Style.distence_height2,
+                                  ],
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                                width: MediaQuery.of(context).size.width * .15,
+                                child: Column(
+                                  children: [
+                                    Text("A", style: TextStyle(color: Colors.red, fontSize: 18),),
+                                    Icon(Icons.phone_in_talk, size: 20,)
+                                  ],
+                                )
+                            ),
+                          ],
+                        ),
+                        Style.distence_height5,
+                        Padding(
+                          padding: const EdgeInsets.only(left: 70.0, right: 15.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              custom_button("Accepted"),
+                              custom_button("Claim"),
+                              custom_button("Cancel"),
+                            ],
+                          ),
+                        ),
+                        Style.distence_height5,
+                      ],
+                    ),
+                  ),
+                );
+              },
+            )
+        ),
+      ),
+    );
+  }
+}
