@@ -28,7 +28,7 @@ class navbar_home extends StatelessWidget {
               width: 30,
             ),
             Style.distence_width5,
-            Text("Scouts Blood Donation\nBangladesh Scouts"),
+            Text("Scouts Blood Donation\nBangladesh Scouts", style: TextStyle(fontSize: 15),),
           ],
         ),
         leading: IconButton(
