@@ -38,6 +38,7 @@ dependencies:
   flutter_screenutil: ^5.9.0
   sms_autofill: ^2.3.0
   custom_radio_grouped_button: ^2.2.1
+  group_button: ^5.3.3
 
 dev_dependencies:
   flutter_test:

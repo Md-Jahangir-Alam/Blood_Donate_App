@@ -30,8 +30,12 @@ class _profile_pageState extends State<profile_page> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("App Notification", style: Style.defaulttext500w,),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8),
+                      child: Text("App Notification", style: Style.defaulttext500w,),
+                    ),
                     CupertinoSwitch(
+                      activeColor: Colors.red,
                         value: _switchValue,
                         onChanged: (value){
                           setState(() {

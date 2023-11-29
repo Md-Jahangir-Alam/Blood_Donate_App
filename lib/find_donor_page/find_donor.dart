@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:it_1/Widgets/button_widget.dart';
-import 'package:custom_radio_grouped_button/custom_radio_grouped_button.dart';
 import 'package:it_1/utilits/colors.dart';
 import 'package:it_1/utilits/style.dart';
-
 import '../Widgets/dropdown_menu.dart';
+import 'package:group_button/group_button.dart';
+
+
 
 class find_donor extends StatelessWidget {
   const find_donor({Key? key}) : super(key: key);
@@ -21,94 +21,16 @@ class find_donor extends StatelessWidget {
             children: [
               Text("Select Blood Group", style: Style.large500w,),
               Style.distence_height5,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CustomCheckBoxGroup(
-                    buttonTextStyle: ButtonTextStyle(
-                      selectedColor: Colors.red,
-                      unSelectedColor: Colors.orange,
-                      textStyle: TextStyle(
-                        fontSize: 16,
-                      ),
-                      selectedTextStyle: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    unSelectedColor: Theme.of(context).canvasColor,
-                    buttonLables: [
-                      "A+",
-                      "A-",
-                      "B+",
-                      "B-",
-                    ],
-                    buttonValuesList: [
-                      "A+",
-                      "A-",
-                      "B+",
-                      "B-",
-                    ],
-                    checkBoxButtonValues: (values) {
-                      print(values);
-                    },
-                    spacing: 0,
-                    horizontal: false,
-                    enableButtonWrap: false,
-                    width: 80,
-                    shapeRadius: 100.0,
-                    radius: 100.0,
-                    height: 25,
-                    absoluteZeroSpacing: false,
-                    selectedColor: Theme.of(context).primaryColorDark,
-                    padding: 10,
-                  )
-                ],
-              ),
-              Style.distence_height5,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CustomCheckBoxGroup(
-                    buttonTextStyle: ButtonTextStyle(
-                      selectedColor: Colors.red,
-                      unSelectedColor: Colors.orange,
-                      textStyle: TextStyle(
-                        fontSize: 16,
-                      ),
-                      selectedTextStyle: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    unSelectedColor: Theme.of(context).canvasColor,
-                    buttonLables: [
-                      "O+",
-                      "O-",
-                      "AB+",
-                      "AB-",
-                    ],
-                    buttonValuesList: [
-                      "O+",
-                      "O-",
-                      "AB+",
-                      "AB-",
-                    ],
-                    checkBoxButtonValues: (values) {
-                      print(values);
-                    },
-                    spacing: 0,
-                    horizontal: false,
-                    enableButtonWrap: false,
-                    width: 80,
-                    shapeRadius: 100.0,
-                    radius: 100.0,
-                    height: 25,
-                    absoluteZeroSpacing: false,
-                    selectedColor: Theme.of(context).primaryColorDark,
-                    padding: 10,
-                  )
-                ],
+              GroupButton(
+                options: GroupButtonOptions(
+                  spacing: 30,
+                  borderRadius: BorderRadius.all(Radius.circular(50)),
+                  selectedBorderColor: Colors.lightBlue,
+                  unselectedBorderColor: Colors.lightBlue,
+                ),
+                maxSelected: 1,                    isRadio: false,
+                onSelected: (index, isSelected, isRadio) => print('button is selected'),
+                buttons: ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"],
               ),
               Style.distence_height10,
               Divider(
@@ -149,7 +71,7 @@ class find_donor extends StatelessWidget {
                 child: Center(
                   child: Text("Search", style: TextStyle(color: Colorscode.pagebackgroundcolor),),
                 ),
-              )
+              ),
             ],
           ),
         ),
